@@ -1,0 +1,55 @@
+### GET request
+GET http://localhost:8080/api/orders
+
+###
+GET http://localhost:8080/api/orders/1
+
+### Create an order with NEW products (note: price is integer)
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "customerName": "John Doe",
+  "status": "PENDING",
+  "date": "2025-09-25T10:30:00",
+  "products": [
+    {
+      "name": "Laptop",
+      "price": 1200
+    },
+    {
+      "name": "Mouse",
+      "price": 25
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/api/products
+
+###
+GET http://localhost:8080/api/products/1
+
+### Create a NEW product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Keyboard",
+  "price": 45
+}
+
+### Create an ORDER that uses EXISTING products by id only (safe now)
+# First ensure products with ids 1 and 2 exist
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "customerName": "Jane Doe",
+  "status": "PENDING",
+  "date": "2025-09-26T09:00:00",
+  "products": [
+    { "id": 1 },
+    { "id": 2 }
+  ]
+}
