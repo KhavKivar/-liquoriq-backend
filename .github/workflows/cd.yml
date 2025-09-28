@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
-            cd ~/app
+            cd liquoriq-backend/
             git reset --hard        # ensure no local changes break the build
             git clean -fd           # remove untracked files
             git pull origin master  # pull latest changes from GitHub
