@@ -1,0 +1,31 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code (optional, if you need for logs or actions)
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. SSH into VM and pull + build + deploy
+      - name: SSH, pull latest, build, and deploy
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            cd ~/app
+            git reset --hard        # ensure no local changes break the build
+            git clean -fd           # remove untracked files
+            git pull origin master  # pull latest changes from GitHub
+            ./gradlew clean build -x test  # build Spring Boot JAR
+            docker-compose down
+            docker-compose up -d --build
