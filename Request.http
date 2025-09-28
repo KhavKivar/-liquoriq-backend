@@ -1,11 +1,11 @@
 ### GET request
-GET http://localhost:8080/api/orders
+GET http://165.1.124.62:8080/api/orders
 
 ###
-GET http://localhost:8080/api/orders/1
+GET http://165.1.124.62:8080/api/orders/1
 
 ### Create an order with NEW products (note: price is integer)
-POST http://localhost:8080/api/orders
+POST http://165.1.124.62:8080/api/orders
 Content-Type: application/json
 
 {
@@ -25,13 +25,13 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/products
+GET http://165.1.124.62:8080/api/products
 
 ###
-GET http://localhost:8080/api/products/1
+GET http://165.1.124.62:8080/api/products/1
 
 ### Create a NEW product
-POST http://localhost:8080/api/products
+POST http://165.1.124.62:8080/api/products
 Content-Type: application/json
 
 {
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 ### Create an ORDER that uses EXISTING products by id only (safe now)
 # First ensure products with ids 1 and 2 exist
-POST http://localhost:8080/api/orders
+POST http://165.1.124.62:8080/api/orders
 Content-Type: application/json
 
 {
