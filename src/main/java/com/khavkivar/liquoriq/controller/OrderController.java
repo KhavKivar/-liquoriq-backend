@@ -15,6 +15,13 @@ public class OrderController {
         this.orderService = orderService;
     }
 
+
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "hello";
+    }
+
+
     @GetMapping
     public List<Order> getOrders() {
         return orderService.getAllOrders();
