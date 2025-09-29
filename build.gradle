@@ -9,9 +9,6 @@ bootJar {
     archiveFileName = 'app.jar'
 }
 
-group = 'com.khavkivar'
-version = '0.0.1-SNAPSHOT'
-description = 'liquoriq'
 
 java {
     toolchain {
