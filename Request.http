@@ -1,6 +1,11 @@
 ### GET request
 GET http://165.1.124.62:8080/api/orders
 
+
+### GET request
+GET http://localhost:8080/api/orders/hello
+
+
 ###
 GET http://165.1.124.62:8080/api/orders/1
 

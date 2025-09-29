@@ -26,7 +26,7 @@ jobs:
             git reset --hard        # ensure no local changes break the build
             git clean -fd           # remove untracked files
             git pull origin master  # pull latest changes from GitHub
-            ./gradlew clean bootJar -x test # build Spring Boot JAR
+            chmod +x gradlew
+            ./gradlew clean bootJar -x test
             docker compose down --remove-orphans
-            docker system prune -f
-            docker compose up -d --build
+            docker compose up -d --build --force-recreate --no-depss
