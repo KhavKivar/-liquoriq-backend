@@ -27,5 +27,6 @@ jobs:
             git clean -fd           # remove untracked files
             git pull origin master  # pull latest changes from GitHub
             ./gradlew clean build -x test  # build Spring Boot JAR
-            docker compose down
+            docker compose down --remove-orphans
+            docker system prune -f
             docker compose up -d --build

@@ -2,7 +2,7 @@ FROM eclipse-temurin:25-jdk-alpine
 
 WORKDIR /app
 
-COPY build/libs/liquoriq-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/*.jar app.jar
 
 EXPOSE 8080
 

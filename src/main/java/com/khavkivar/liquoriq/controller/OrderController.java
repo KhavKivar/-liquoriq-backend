@@ -18,7 +18,7 @@ public class OrderController {
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "hello";
+        return "hell so";
     }
 
 
