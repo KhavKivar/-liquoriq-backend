@@ -18,7 +18,7 @@ public class OrderController {
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "hell so";
+        return "Test new config on cloud machine";
     }
 
 
